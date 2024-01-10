@@ -52,7 +52,7 @@ Entre algumas das instruções elementares, podemos listar as seguintes:
 - **WORKDIR**:
 	-  Define o diretório de trabalho em que as instruções serão executadas.
 	-  Exemplo: `WORKDIR /app` define o diretório `/app` como o diretório de trabalho.
-- **RUN**: executa comandos durante a construção (caso você precise instalar Python, por exemplo, você usaria `RUN apt-get update && apt-get install -y python3`)
+- **RUN**: executa comandos durante a construção (caso você precise instalar Python, por exemplo, você usaria `RUN apt-get update && apt-get install -y python3`).
 - **ENTRYPOINT**:
 	- Configura os comandos que serão executados durante a inicialização do contêiner. São "pontos de entrada", isto é, a maneira como a aplicação virá à luz.
 	- Exemplo: `ENTRYPOINT ["python3"]` faz com que o contêiner execute o interpretador do Python.
@@ -70,7 +70,7 @@ COPY . /app
 RUN pip install -r requirements.txt CMD ["python", "./meu_script.py"]
 ```
 
-Este Dockerfile cria uma imagem para uma aplicação Python a partir de uma imagem base do Python 3.8, configura o diretório de trabalho, copia os arquivos da aplicação, instala as dependências e define o comando padrão para executar a aplicação. E pronto.
+Este Dockerfile cria uma imagem para uma aplicação Python a partir de uma imagem base do Python 3.8, configura o diretório de trabalho, copia os arquivos da aplicação, instala as dependências e define o comando padrão para executar a aplicação. E é isso, em suma.
 
 ### Depois do Dockerfile
 
