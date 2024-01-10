@@ -7,7 +7,7 @@ No caso dos contêineres, vamos primeiro partir de uma definição ingênua do p
 
 A solução para a implantação tradicional foi recorrer à virtualização. Em suma, múltiplas máquinas virtuais (VMs) poderiam executar no mesmo servidor físico. Não só diminuímos o custo e tornamos a solução mais escalável como também ganhamos o benefício de uma segurança mais robusta, já que a virtualização, ao impedir que uma aplicação tenha livre acesso a outra, garante uma camada adicional de segurança ao processo. As máquinas virtuais permitem uma alocação mais eficiente dos recursos do servidor físico e, com isso, tornam possível que uma aplicação seja escalável, alocando mais ou menos recursos conforme for o caso. Pense em cada máquina virtual como a cópia de uma máquina real dotada de todos os componentes necessários, até mesmo de seu próprio sistema operacional, que roda num hardware também virtualizado.
 
-Enfim chegamos aos contêineres, que se assemelham em muito às máquinas virtuais: ambos têm um sistema próprio de arquivos, alocação determinada dos recursos da CPU, etc. A diferença principal consiste no seguinte: enquanto as máquinas virtuais incluem um sistema operacional completo para cada instância, os contêineres compartilham o mesmo sistema operacional do *host* sem deixar de isolar os processos entre si. Além disso, cada contêiner encapsula a aplicação e todas as suas dependências em uma única unidade (a imagem, como veremos mais adiante), tornando-o mais portátil e consistente do que as VMs. Enfim, a inovação dos contêineres reside na sua capacidade de proporcionar isolamento e eficiência sem a sobrecarga de um sistema operacional completo, como é o caso das máquinas virtuais.
+Enfim chegamos aos contêineres, que se assemelham em muito às máquinas virtuais: ambos têm um sistema próprio de arquivos, alocação determinada dos recursos da CPU, etc. A diferença principal consiste no seguinte: enquanto as máquinas virtuais incluem um sistema operacional completo para cada instância, os contêineres compartilham o mesmo sistema operacional do hospedeiro sem deixar de isolar os processos entre si. Além disso, cada contêiner encapsula a aplicação e todas as suas dependências em uma única unidade (a imagem, como veremos mais adiante), tornando-o mais portátil e consistente do que as VMs. Enfim, a inovação dos contêineres reside na sua capacidade de proporcionar isolamento e eficiência sem a sobrecarga de um sistema operacional completo, como é o caso das máquinas virtuais.
 
 ## Um relance por trás dos bastidores
 
@@ -85,7 +85,7 @@ docker build -t minha_imagem_python
 docker run -d -p 5000:5000 minha_imagem_python
 ```
 
-Agora que a imagem `minha_imagem_python` foi construída, você pode iniciar um contêiner a partir dela. Este comando executa o contêiner em modo 'detached' (`-d`), mapeando a porta 5000 do host para a porta 5000 do contêiner.
+Agora que a imagem `minha_imagem_python` foi construída, você pode iniciar um contêiner a partir dela. Este comando executa o contêiner em modo 'detached' (`-d`), mapeando a porta 5000 do hospedeiro para a porta 5000 do contêiner.
 
 Se quisermos verificar quais contêineres estão rodando e, posteriormente, encerrá-los, podemos utilizar o comando `docker ps`, que mostra todos os contêineres ativos do momento seguido do ID ou nome do contêiner.  Se quisermos encerrá-lo, usaríamos `docker stop`.
 
