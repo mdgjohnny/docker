@@ -43,7 +43,7 @@ Docker nada mais é que uma peça central nessa arquitetura de conteinerização
 INSTRUÇÃO argumentos
 ```
 
-Em regra, todo *Dockerfile* começa com a mesma instrução: FROM. ([Há exceções](https://docs.docker.com/engine/reference/builder/#format), claro.) FROM nada mais é do que uma das instruções básicas que compõem o vocabulário do Docker.
+Em regra, todo *Dockerfile* começa com a mesma instrução: FROM. ([Há exceções](https://docs.docker.com/engine/reference/builder/#format), claro). FROM nada mais é do que uma das instruções básicas que compõem o vocabulário do Docker.
 
 Entre algumas das instruções elementares, podemos listar as seguintes:
 - **FROM**:
