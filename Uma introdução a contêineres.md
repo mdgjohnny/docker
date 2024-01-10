@@ -15,7 +15,7 @@ Você já entendeu o conceito de contêiner, o problema que eles solucionam e as
 
 Quando nos referimos a um contêiner, estamos nos referindo a um processo isolado que roda numa máquina hospedeira. Este processo não se comunica com os outros processos do servidor, sejam eles quais forem. O contêiner tira partido de algumas características do Linux, como [*namespaces*](https://man7.org/linux/man-pages/man7/namespaces.7.html) e [*cgroups*](https://man7.org/linux/man-pages/man7/cgroups.7.html). Não vamos nos alongar nisso agora. O que a gente precisa saber é que ambas as características permitem circunscrever determinados recursos globais do sistema a uma camada de abstração só dele. Ou seja, é como se cada processo fosse soberano em seu próprio espaço e tivesse monopólio sobre aquele recurso do sistema. As abstrações dos *namespaces* permitem a existência simultânea de múltiplos grupos de processos, cada um com uma visão particular do sistema. É meio macabro, digamos assim, mas ajuda pensar na estrutura da conteinerização como semelhante a um panóptico. O agente que supervisiona o sistema é capaz de avistar todo o interior do edifício, ou seja, as jaulas de execução contendo seus respectivos processos, ao passo que todo processo dentro daquela jaula tem apenas uma vista parcial da totalidade do sistema, que lhe é inatingível e impenetrável. A analogia é, por definição, inexata, mas serve para nos ajudar a visualizarmos melhor o processo.
 
-![[Pasted image 20240109150836.png]]
+![[panoptico.png]]
 
 
 ## A imagem, ou o contêiner em ação
